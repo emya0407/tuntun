@@ -1,0 +1,245 @@
+/* * {
+      font-family: 'Raleway', sans-serif;
+        font-weight: 300;
+} */
+
+
+#toggle {
+        position:fixed;
+        top: 37px;
+        right: 20px;
+        width: 30px;
+        height: 21px;
+        cursor: pointer;
+        z-index: 1000000;
+    }
+
+    #toggle div.bar,
+    #toggle div.bar:before,
+    #toggle div.bar:after {
+        width: 100%;
+        height: 3px;
+        background: #333;/*5e55a1*/
+    }
+
+    #toggle div.bar {
+        position: relative;
+        transform: translateY(9px);
+        transition: all 0.3s 0.3s ease;
+    }
+
+    #toggle div.bar:before {
+        content: " ";
+        position: absolute;
+        bottom: 9px;
+        transition: bottom 0.3s 0.3s ease, transform 0.3s ease;
+    }
+
+     #toggle div.bar:after {
+        content: " ";
+        position: absolute;
+        top: 9px;
+        transition: top 0.3s 0.3s ease, transform 0.3s ease;
+    }
+
+    /* Animation */
+
+    #toggle div.bar.animate {
+        background: rgba(255, 255, 255, 0);
+    }
+
+    #toggle div.bar.animate:after {
+        top: 0;
+        transform: rotate(45deg);
+        background: #fff;
+        transition: top 0.3s ease, transform 0.3s 0.3s ease;
+    }
+
+    #toggle div.bar.animate:before {
+        bottom: 0;
+        transform: rotate(-45deg);
+        background: #fff;
+        transition: bottom 0.3s ease, transform 0.3s 0.3s ease;
+    }
+    #overlay {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.3s ease, max-height 0s 0.6s ease;
+        z-index: 10000;
+        opacity: 1;
+        background: url('../img/lnb_bg.png') no-repeat;
+        background-position: top left ;
+        background-color:rgba(96,99,163,0.95);
+        /* filter:alpha(opacity=50); */
+        box-shadow:0 0 40px rgba(0,0,0,0.6) ;
+        width:100%
+    }
+    section#overlay .inner{
+      margin-top: 150px;
+    }
+    section#overlay .inner p {
+      margin-top: 40px;
+      font-family: "SDIyagi";
+      font-size: 18px;
+      font-weight: 300;
+      color: #c1c5ff;
+      line-height: 1.12;
+      letter-spacing: -.7px;
+      transition: all 0.9s 0s ease;
+    }
+    section#overlay .inner .btn {
+      position: relative;
+      /* height: 50px; */
+      letter-spacing: -1px;
+      padding: 14px 40px;
+      border: 2px solid #24b4ab;
+      background-color: #fff;
+      color: #24b4ab;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      border-radius: 50px;
+      font-weight: 800;
+      text-align: center;
+      transition: all 0.9s 0s ease;
+    }
+    section#overlay .btn:hover, section#overlay .btn:focus {
+      background-color: #24b4ab;
+      color: #fff;
+      border: 2px solid #24b4ab;
+      box-sizing: border-box;
+      transition: all 0.4s ease;
+    }
+    section#overlay .inner .btn:before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      right: 0;
+      left: 0;
+      margin: 0 auto;
+      background: url(../img/svg/heart.svg);
+      width: 93.5px;
+      height: 70px;
+    }
+    #overlay nav {
+      position: absolute;
+      top: 15%;
+      width: 100%;
+      height: 60%;
+      text-align: center;
+    }
+
+    #overlay nav ul,
+    #overlay nav ul li {
+        margin: 0;
+        padding: 0;
+        display: block;
+        position: static;
+    }
+
+     #overlay nav ul {
+        /* padding: 80px 0 20px; */
+        height: 60%;
+     }
+
+     #overlay nav ul li {
+         height: 25%;
+         line-height: 25%;
+         /* border: 1px solid red; */
+        /* margin-bottom: 20px; */
+        border-bottom: 1px dashed #7479ba;
+        opacity: 0;
+        transition: all 0.9s 0s ease;
+        margin-left: 60px;
+     }
+     #overlay nav ul li:last-child {
+         height: 25%;
+         line-height: 25%;
+         border-bottom: 1px dashed #7479ba;
+        /* margin-bottom: 20px; */
+        opacity: 0;
+        transition: all 0.5s 0s ease;
+        margin-left: 60px;
+     }
+
+     #overlay nav ul li a {
+       position: relative;
+       height: 25px;
+       display: inline-block;
+       color: #000;
+       transition: all 0.5s 0s ease;
+     }
+
+
+     /* #overlay nav ul li a:after {
+        content: " ";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        opacity: 0;
+        height: 1px;
+        background: white;
+        transition: all 0.3s 0s ease;
+      } */
+
+     #overlay nav ul li a:hover:after {
+       width: 100%;
+       opacity: 1;
+     }
+
+     #overlay nav ul li a:hover {
+       color: #afb1ff;
+     }
+
+     #page.overlay #overlay nav ul li:nth-child(1) {
+       transition: all 0.9s 0.6s ease;
+     }
+     #page.overlay #overlay nav ul li:nth-child(2) {
+       transition: all 0.9s 0.8s ease;
+     }
+     #page.overlay #overlay nav ul li:nth-child(3) {
+       transition: all 0.9s 1.0s ease;
+     }
+     #page.overlay #overlay nav ul li:nth-child(4) {
+       transition: all 0.9s 1.2s ease;
+     }
+     #overlay .inner p {
+       transition: all 0.9s 1.4s ease;
+     }
+	  #overlay .inner .btn {
+       transition: all 0.9s 1.6s ease;
+     }
+
+
+     #overlay nav ul li a {
+       position: relative;
+       top: 50%;
+        text-transform: normal;
+        font-size: 20px;
+        font-weight: 500;
+        color: white;
+        text-decoration: none;
+     }
+
+    #page.overlay #overlay {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        max-height: 1200px;
+        opacity: 1;
+        z-index: 100000;
+        transition: all 0.3s ease;
+    }
+
+    #page.overlay #overlay nav ul li,  #overlay .inner p, #overlay .inner .btn {
+
+      margin-left: 0;
+      opacity: 1;
+    }
