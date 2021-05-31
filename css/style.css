@@ -600,6 +600,9 @@ section#event .tit_box{
   section#introduce{
     margin-top: 50px;
   }
+  footer .row .area_link{
+    display: none;
+  }
 }
 
 section#event .tit_box h3{
